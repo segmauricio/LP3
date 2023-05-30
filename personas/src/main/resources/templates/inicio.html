@@ -1,0 +1,21 @@
+<html xmlns:th="htttp://www.thymeleaf.org">
+    <head>
+        <title th:text="${titulo}"></title>   
+    </head>
+    <body>
+        <h2>Bienvenidos</h2>
+        <p th:text="${mensaje}"></p>
+        <!-- 
+        <ol>
+            <li th:text="${persona.nombre}+' '+${persona.apellido}"></li>
+        </ol>
+        -->
+        */
+        <h3>Lista</h3>
+        <ol>
+            <li th:each='p: ${personas}'>
+                <span th:text="${p.nombre}+' '+${p.apellido}"></span>
+            </li>
+        </ol>
+    </body>
+</html>
