@@ -1,0 +1,104 @@
+<html xmlns:th="http://www.thymeleaf.org">
+    <head th:fragment="head">
+        <title>Inicio</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+        <link rel="stylesheet" th:href="@{/webjars/font-awesome/css/all.css}">
+    </head>
+    <body>
+        <header th:fragment="header">
+            <nav class="navbar bg-light">
+                <div class="container">
+                    <a class="navbar-brand" href="#">
+                        <i class="fa fa-duotone fa-gear" style="--fa-primary-color: #6e6b53; --fa-secondary-color: #d7681d;"></i>
+                        Gestion de Datos
+                    </a>
+                </div>
+            </nav>
+        </header>
+        <!<!-- SIDEBAR -->
+        <sidebar class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark" th:fragment="sidebar">
+            <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+                <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                    <span class="fs-5 d-none d-sm-inline">Menu</span>
+                </a>
+                <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link align-middle px-0">
+                            <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Home</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline">Orders</span></a>
+                    </li>
+                </ul>
+                <hr>
+            </div>
+        </sidebar>
+        <footer class="text-center text-white" style="background-color: #f1f1f1;" th:fragment="footer">
+            <!-- Grid container -->
+            <div class="container pt-4">
+                <!-- Section: Social media -->
+                <section class="mb-4">
+                    <!-- Facebook -->
+                    <a
+                        class="btn btn-link btn-floating btn-lg text-dark m-1"
+                        href="#!"
+                        role="button"
+                        data-mdb-ripple-color="dark"
+                        ><i class="fab fa-facebook-f"></i
+                        ></a>
+                    <!-- Twitter -->
+                    <a
+                        class="btn btn-link btn-floating btn-lg text-dark m-1"
+                        href="#!"
+                        role="button"
+                        data-mdb-ripple-color="dark"
+                        ><i class="fab fa-twitter"></i
+                        ></a>
+                    <!-- Google -->
+                    <a
+                        class="btn btn-link btn-floating btn-lg text-dark m-1"
+                        href="#!"
+                        role="button"
+                        accesskey=""data-mdb-ripple-color="dark"
+                        ><i class="fab fa-google"></i
+                        ></a>
+                    <!-- Instagram -->
+                    <a
+                        class="btn btn-link btn-floating btn-lg text-dark m-1"
+                        href="#!"
+                        role="button"
+                        data-mdb-ripple-color="dark"
+                        ><i class="fab fa-instagram"></i
+                        ></a>
+                    <!-- Linkedin -->
+                    <a
+                        class="btn btn-link btn-floating btn-lg text-dark m-1"
+                        href="#!"
+                        role="button"
+                        data-mdb-ripple-color="dark"
+                        ><i class="fab fa-linkedin"></i
+                        ></a>
+                    <!-- Github -->
+                    <a
+                        class="btn btn-link btn-floating btn-lg text-dark m-1"
+                        href="#!"
+                        role="button"
+                        data-mdb-ripple-color="dark"
+                        ><i class="fab fa-github"></i
+                        ></a>
+                </section>
+            <!-- Section: Social media -->
+            </div>
+            <!-- Grid container -->
+            <!-- Copyright -->
+            <div class="text-center text-dark p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+                © 2020 Copyright:
+                <a class="text-dark" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+            </div>
+            <!-- Copyright -->
+        </footer>
+</body>
+</html>
