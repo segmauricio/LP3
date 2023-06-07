@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Proveedores</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+        <link rel="stylesheet" th:href="@{/webjars/font-awesome/css/all.css}">
+    </head>
+    <body>
+        <header th:replace="comunes/template :: header"></header>
+        <div class="container-fluid">
+            <div class="row flex-nowrap">  
+                <div class="col-6" style="margin: 30px 100px;">   
+                    <h2 style="color: #021e52">Proveedores</h2>
+                    <h5><a href="/" style="text-decoration: none; color:#6799f5;"><i class="fa fa-plus-circle" aria-hidden="true"></i> Nuevo</a></h5>
+                    <table class="table table-bordered">
+                        <thead class="table-primary">
+                            <tr>
+                                <th>Id</th>
+                                <th>Nombre</th>
+                                <th>RUC</th>
+                                <th>Email</th>
+                                <th>Sitio web</th>
+                                <th>Editar</th>
+                                <th>Borrar</th>
+                            </tr>
+                        </thead>
+                        <tr th:each="p: ${proveedores}">
+                            <td th:text="${p.id}"></td>
+                            <td th:text="${p.nombre}"></td>
+                            <td th:text="${p.RUC}"></td>
+                            <td th:text="${p.email}"></td>
+                            <td th:text="${p.web}"></td>
+                            <td><a th:href="@{/editar/}+${p.id}" style="text-decoration: none; color:#6799f5;"><i class="fa fa-pencil" aria-hidden="true"></i> Editar</a></td>
+                            <td><a th:href="@{/borrar/}+${p.id}" style="text-decoration: none; color:#6799f5;"><i class="fa fa-trash" aria-hidden="true"></i> Borrar</a></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

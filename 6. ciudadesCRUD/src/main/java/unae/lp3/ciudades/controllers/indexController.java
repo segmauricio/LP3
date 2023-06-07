@@ -23,11 +23,13 @@ public class indexController {
             modelo.addAttribute("ciudades", ciudades);
             return "index";
         }
+    
     @GetMapping("/nuevo")
     public String nuevo(Ciudad ciudad)
     {  
     return "form";
     }
+    
     @GetMapping("/editar/{id}")
     public String editar(Ciudad ciudad,Model modelo)
     {
@@ -37,12 +39,13 @@ public class indexController {
     return "form";
     }
     
-  @PostMapping("/guardar")
+    @PostMapping("/guardar")
     public String guardar(Ciudad ciudad)
     {  
     ciudad_repo.save(ciudad);
     return "redirect:/";
     }  
+    
     @GetMapping("/borrar/{id}")
     public String borrar(Ciudad ciudad)
     {  

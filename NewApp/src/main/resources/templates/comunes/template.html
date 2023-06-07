@@ -1,0 +1,26 @@
+<html xmlns:th="http://www.thymeleaf.org">
+    <head th:fragment="head">
+        <title>Inicio</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+        <link rel="stylesheet" th:href="@{/webjars/font-awesome/css/all.css}">
+    </head>
+    <body>
+        <header th:fragment="header">
+            <h1 class="text-center"><mark>Nueva App</mark> </h1>
+        </header>
+        <sidebar th:fragment="sidebar">
+            <ul>
+                <li>Ciudades</li>
+                <li>Personas</li>
+            </ul>
+        </sidebar>
+        <div th:fragment="main">
+            Sin fragmento
+        </div>
+        <footer th:fragment="footer" class="bg-warning text-center text-center">
+            <pre>footer</pre>
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="comunes/template :: head">
+        <title>Main Page</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+        <link rel="stylesheet" th:href="@{/webjars/font-awesome/css/all.css}">
+    </head>
+    <body>
+        <header th:replace="comunes/template :: header">
+        </header>
+        <div class="container">
+            <div class="row">
+                <div class="col-4" th:replace="comunes/template :: sidebar">aside</div>
+                <div class="col-8">
+                    <div th:if="@{${vista}}">
+                        <div th:replace="@{${vista}} :: ${fragmento}">Main</div>
+                    </div>
+                    <div th:unless="@{${vista}}">FAIL</div>
+                </div>
+            </div>
+        </container>
+        <footer th:replace="comunes/template :: footer">
+            <pre>footer</pre>
+        </footer>
+</body>
+</html>

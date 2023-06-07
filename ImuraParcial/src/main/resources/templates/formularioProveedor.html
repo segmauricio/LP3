@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html>
+    <head>
+        <title>Proveedores - Formulario</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+        <link rel="stylesheet" th:href="@{/webjars/font-awesome/css/all.css}">
+    </head>
+    <body>
+        <header th:replace="comunes/template :: header"></header>
+        <div class="container-fluid">
+            <div class="col-5" style="margin: 30px 100px;">
+                <h2 style="color: #021e52">Formulario</h2>
+                <h5><a href="/datos" style="text-decoration: none; color:#6799f5;"><i class="fa fa-table" aria-hidden="true"></i> Ver datos</a></h5>
+                <form th:action="@{/guardar}" method="post" th:object="${proveedor}">
+                    <input class="form-control" type="hidden" name="id" th:field="*{id}" />
+                    <div class="form-group row">
+                        <label for="imputnom" class="col-sm-2 col-form-label">Nombre:</label>
+                        <div class="col-sm-10">
+                          <input class="form-control" type="text" id="nombre" name="nombre" placeholder="Ingrese el Nombre" th:field="*{nombre}">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="imputRUC" class="col-sm-2 col-form-label">RUC:</label>
+                        <div class="col-sm-10">
+                          <input class="form-control" type="text" id="RUC" name="RUC" placeholder="Ingrese el RUC" th:field="*{RUC}">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="imputemail" class="col-sm-2 col-form-label">Email:</label>
+                        <div class="col-sm-10">
+                          <input class="form-control" type="text" id="email" name="email" placeholder="Ingrese el email" th:field="*{email}">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="imputweb" class="col-sm-2 col-form-label">Sitio web:</label>
+                        <div class="col-sm-10">
+                          <input class="form-control" type="text" id="web" name="web" placeholder="Ingrese el Sitio web" th:field="*{web}">
+                        </div>
+                    </div>
+                    <button class="form-control" type="submit" style="margin-top: 10px;"><i class="fa fa-paper-plane" aria-hidden="true"></i> Enviar</button>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

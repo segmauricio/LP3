@@ -1,0 +1,31 @@
+<div th:fragment="ciudadeslista">
+    <div class="col">
+        <div class="d-flex bd-highlight">
+            <div class="p-2 w-100 bd-highlight">
+                <h2>Ciudades <small class="text-muted">de Itapúa</small></h2>
+            </div>
+            <div class="p-2 flex-shrink-1 bd-highlight">
+                <a href="/nuevo" type="button" class="btn btn-primary">Nuevo</a>
+            </div>
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Ciudad</th>
+                    <th scope="col">Editar</th>
+                    <th scope="col">Borrar</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr th:each="c: ${ciudades}">
+                    <td th:text="${c.id}"></td>
+                    <td th:text="${c.nombre}"></td>
+                    <td><a th:href="@{/editar/}+${c.id}" type="button" class="btn btn-warning">Editar</a></td>
+                    <td><a th:href="@{/borrar/}+${c.id}"  type="button" class="btn btn-danger" >Borrar</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
