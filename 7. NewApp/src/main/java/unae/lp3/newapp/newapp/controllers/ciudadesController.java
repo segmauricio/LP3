@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import unae.lp3.newapp.newapp.models.Ciudad;
 import unae.lp3.newapp.newapp.repositories.CiudadRepository;
 
 /**
@@ -27,19 +28,20 @@ public class ciudadesController {
     }
     
     @GetMapping("/nuevo")
-    public String nuevo(Model modelo){
+    public String nuevo(Model modelo, Ciudad ciudad){
         modelo.addAttribute("vista", "ciudades/form");
         modelo.addAttribute("fragmento", "ciudadesform");
+        modelo.addAttribute("ciudad", "ciudad");
         return "index";
     }
 
     @GetMapping("/editar")
-    public String editar(Model modelo){
+    public String editar(Model modelo, Ciudad ciudad){
         return "index";
     }
     
     @GetMapping("/borrar")
-    public String borrar(Model modelo){
+    public String borrar(Model modelo, Ciudad ciudad){
         return "index";
     }
 }
