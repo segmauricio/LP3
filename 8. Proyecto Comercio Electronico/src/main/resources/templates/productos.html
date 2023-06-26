@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Productos</title>
+        <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
+        <link rel="stylesheet" th:href="@{/webjars/font-awesome/css/all.css}">
+    </head>
+    <body>
+        <div th:insert="fragments/nav :: nav" style="margin-bottom: 70px"></div>
+        <div>
+            <div style="display: flex; justify-content: space-evenly;">
+                <h3>Stock de Productos</h3>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#createProductoModal">
+                    Create Producto
+                </button>
+            </div>
+            <div class="container h-100" style="display: flex; flex-direction: column; align-items: center; min-height: 100vh">
+                <br>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Descripción</th>
+                            <th scope="col">Pantalla</th>
+                            <th scope="col">Almacenamiento</th>
+                            <th scope="col">RAM</th>
+                            <th scope="col">Sistema Operativo</th>
+                            <th scope="col">Procesador</th>
+                            <th scope="col">Información</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="producto : ${productos}">
+                            <td th:text="${producto.getNombre()}"></td>
+                            <td th:text="${producto.getDescripcion()}"></td>
+                            <td th:text="${producto.getPantalla()}"></td>
+                            <td th:text="${producto.getAlmacenamiento()}"></td>
+                            <td th:text="${producto.getRam()}"></td>
+                            <td th:text="${producto.getSitemaOperativo()}"></td>
+                            <td th:text="${producto.getProcesador()}"></td>
+                            <td th:text="${producto.getInfo()}"></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- Modal -->
+                <div
+                    th:insert="fragments/modal"
+                    >
+                </div>
+            </div>
+            <div th:insert="fragments/footer"></div>
+            <script th:src="@{/webjars/jquery/3.0.0/jquery.min.js}"></script>
+            <script th:src="@{/webjars/popper.js/1.12.9-1/umd/popper.min.js}"></script>
+            <script th:src="@{/webjars/bootstrap/4.0.0-2/js/bootstrap.min.js}"></script>
+    </body>
+</html>
