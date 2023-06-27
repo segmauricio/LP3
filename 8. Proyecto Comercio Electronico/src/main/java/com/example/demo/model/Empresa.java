@@ -52,11 +52,9 @@ public class Empresa {
     private Set<Producto> productos;
 
     @CreatedDate
-    @Column(nullable = false, updatable = false)
     private OffsetDateTime dateCreated;
 
     @LastModifiedDate
-    @Column(nullable = false)
     private OffsetDateTime lastUpdated;
 
 }

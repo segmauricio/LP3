@@ -11,6 +11,7 @@ import lombok.Setter;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+import org.hibernate.annotations.CreationTimestamp;
 
 
 @Entity
@@ -54,12 +55,8 @@ public class Usuario {
     )
     private Set<Rol> roles;
 
-    @CreatedDate
-    @Column(nullable = false, updatable = false)
     private OffsetDateTime dateCreated;
-
-    @LastModifiedDate
-    @Column(nullable = false)
+    
     private OffsetDateTime lastUpdated;
 
 }
