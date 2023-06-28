@@ -53,7 +53,7 @@ public class HomeController {
     public String usuariosSubmit(@ModelAttribute Usuario usuario) {
 
         usuarioService.create(usuario);
-        return "redirect:/new-user";
+        return "redirect:/admin-panel";
     }
     
     @GetMapping("/new-empresa")
@@ -70,7 +70,7 @@ public class HomeController {
     public String empresasubmit(@ModelAttribute Empresa empresa) {
 
         empresaService.create(empresa);
-        return "redirect:/new-empresa";
+        return "redirect:/admin-panel";
     }
     
     @GetMapping("admin-panel")
