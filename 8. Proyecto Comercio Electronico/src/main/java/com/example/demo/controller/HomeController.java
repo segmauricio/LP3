@@ -73,6 +73,21 @@ public class HomeController {
         return "redirect:/new-empresa";
     }
     
+    @GetMapping("admin-panel")
+    public String adminpanel(Model model){
+        List<Usuario> usuarios = usuarioService.findAll();
+        model.addAttribute("usuarios", usuarios);
+        Usuario usuario = new Usuario();
+        model.addAttribute("usuario", usuario);
+        
+        List<Empresa> empresas = empresaService.findAll();
+        model.addAttribute("empresas", empresas);
+        Empresa empresa = new Empresa();
+        model.addAttribute("empresa", empresa);
+        
+        return "adminpanel";
+    }
+    
     @GetMapping("/productos")
     public String productos(Model model, HttpSession session) {
 //        Empresa empresa = empresaService.get(10000L);

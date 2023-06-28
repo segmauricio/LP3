@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Admin Panel</title>
+        <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
+        <link rel="stylesheet" th:href="@{/webjars/font-awesome/css/all.css}">
+    </head>
+    <body>
+        <div th:insert="fragments/nav :: nav" style="margin-bottom: 50px"></div>
+        <div>
+            <div style="display: flex; justify-content: center">
+                <h1>Admin Panel view</h1>
+            </div>
+            <div class="container h-100" style="display: flex; flex-direction: column; align-items: center; min-height: 100vh">
+                <br>
+                <!-- Tabla de usuarios -->
+                <div style="display: flex; justify-content: space-around; width: 1700px; padding: 25px">
+                    <h3>Lista de Usuarios</h3>
+                    <a href="/new-user" class="btn btn-primary btn-lg mt-6">Nuevo Usuario</a>
+                </div>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Dirección</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="usuario : ${usuarios}">
+                            <td th:text="${usuario.getId()}"></td>
+                            <td th:text="${usuario.getNombre()}"></td>
+                            <td th:text="${usuario.getEmail()}"></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- Tabla de empresas -->
+                <div style="display: flex; justify-content: space-around; width: 1700px; padding: 25px">
+                    <h3>Lista de Empresas</h3>
+                    <a href="/new-empresa" class="btn btn-primary btn-lg mt-6">Nueva Empresa</a>
+                </div>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Dirección</th>
+                            <th scope="col">Teléfono</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="empresa : ${empresas}">
+                            <td th:text="${empresa.getId()}"></td>
+                            <td th:text="${empresa.getNombre()}"></td>
+                            <td th:text="${empresa.getDireccion()}"></td>
+                            <td th:text="${empresa.getTel()}"></td>
+                        </tr>
+                    </tbody>
+                </table>      
+            </div>
+            <div th:insert="fragments/footer"></div>
+    </body>
+</html>
