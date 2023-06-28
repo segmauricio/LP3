@@ -54,8 +54,8 @@ public class HomeController {
 
         usuarioService.create(usuario);
         return "redirect:/admin-panel";
+        
     }
-    
     @GetMapping("/new-empresa")
     public String empresas(Model model, HttpSession session){
         List<Empresa> empresas = empresaService.findAll();

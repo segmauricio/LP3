@@ -10,7 +10,7 @@
         <!--HEADER-->
         <div th:insert="fragments/nav :: nav" style="margin-bottom: 70px"></div>
         <div id="createProductoModal">
-            <div style="display: flex; justify-content: space-evenly;">
+            <div style="display: flex; justify-content: space-evenly; margin-bottom: 35px">
                 <h3>Create a New User</h3>
             </div>
             <!--NUEVO USUARIO FORM-->
@@ -21,7 +21,7 @@
                     th:object="${usuario}"
                     method="post"
                     >
-                    <div class="form-group row" style="display: flex; justify-content: space-between">
+                    <div class="form-group row" style="display: flex; justify-content: space-between; width: 600px">
                         <label for="nombre" class="col-2 col-form-label"
                                >Nombre</label
                         >
@@ -31,6 +31,7 @@
                                 id="nombre"
                                 name="nombre"
                                 th:field="*{nombre}"
+                                placeholder="Escriba su nombre"
                                 />
                         </div>
                     </div>
@@ -44,6 +45,7 @@
                                 id="email"
                                 name="email"
                                 th:field="*{email}"
+                                placeholder="Escriba su email"
                                 />
                         </div>
                     </div>
@@ -55,6 +57,7 @@
                                 id="contrasena"
                                 name="contrasena"
                                 th:field="*{contrasena}"
+                                placeholder="Escriba su contraseña"
                                 />
                         </div>
                     </div>

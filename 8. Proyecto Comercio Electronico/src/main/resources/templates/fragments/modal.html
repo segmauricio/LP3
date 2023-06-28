@@ -43,6 +43,7 @@
                     id="nombre"
                     name="nombre"
                     th:field="*{nombre}"
+                    placeholder="Agregue su nombre aquí"
                   />
                 </div>
               </div>
@@ -56,6 +57,7 @@
                     id="descripcion"
                     name="descripcion"
                     th:field="*{descripcion}"
+                    placeholder="Agregue la descripción del producto aquí"
                   />
                 </div>
               </div>
@@ -67,8 +69,9 @@
                     id="pantalla"
                     name="pantalla"
                     th:field="*{pantalla}"
+                    placeholder="Agregue la dimensión de la pantalla aquí"
                   />
-                  
+                  <small id="emailHelp" class="form-text text-muted">Use números</small>
                 
                 </div>
               </div>
@@ -80,7 +83,9 @@
                     id="almacenamiento"
                     name="almacenamiento"
                     th:field="*{almacenamiento}"
+                    placeholder="Ej: 512, 36..."
                   />
+                  <small id="emailHelp" class="form-text text-muted">En Gb. Use números</small>
                 </div>
               </div>
               <div class="form-group row" style="display: flex; justify-content: space-between">
@@ -91,7 +96,9 @@
                     id="ram"
                     name="ram"
                     th:field="*{ram}"
+                    placeholder="Ej: 4, 5..."
                   />
+                  <small id="emailHelp" class="form-text text-muted">En Gb. Use números</small>
                 </div>
               </div>
               <div class="form-group row" style="display: flex; justify-content: space-between">
@@ -102,6 +109,7 @@
                     id="sitemaOperativo"
                     name="sitemaOperativo"
                     th:field="*{sitemaOperativo}"
+                    placeholder="Ej: Android, iOS..."
                   />
                 </div>
               </div>
@@ -113,6 +121,7 @@
                     id="procesador"
                     name="procesador"
                     th:field="*{procesador}"
+                    placeholder="Ej: Mediatek, AChip..."
                   />
                 </div>
               </div>
@@ -124,6 +133,7 @@
                     id="info"
                     name="info"
                     th:field="*{info}"
+                    placeholder="Ej: Información que considere relevante "
                   />
                 </div>
               </div> 
